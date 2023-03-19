@@ -88,26 +88,38 @@ async function loadCards(){
             descri.classList.add('description')
             descri.classList.add('hidden')
             const descriH3=document.createElement('h3')
-            descriH3.innerText=`${`${element.description}`.substring(0,30)}...`
+            descriH3.innerText=`${`${element.description}`.substring(0,50)}...`
             descri.appendChild(descriH3)
             
             //show description section 
             const showDesc=document.createElement('div')
                 showDesc.classList.add('show-desc')
             const pTag=document.createElement('p')
-                pTag.innerHTML='Show Description '
+                pTag.innerText='Show Description '
+            
             const pTagI=document.createElement('i')
                 pTagI.classList.add('fa-sharp')
                 pTagI.classList.add('fa-solid')
                 pTagI.classList.add('fa-angle-down')
                 pTag.appendChild(pTagI)
+//creating new i tage for up side arrow adn appending it to new p tage name Ptag2 
+                const PTag2=document.createElement('p')
+                PTag2.innerText='Show Less'
+                PTag2.classList.add('hidden')
+                const pTagI2=document.createElement('i')
+                pTagI2.classList.add('fa-sharp')
+                pTagI2.classList.add('fa-solid')
+                pTagI2.classList.add('fa-angle-up')
+                PTag2.appendChild(pTagI2)
+                showDesc.appendChild(PTag2)
                 showDesc.appendChild(pTag)
-                box.appendChild(showDesc)
 
+            box.appendChild(showDesc)
             showDesc.addEventListener('click',()=>{
-                console.log('hello')
-                descri.classList.toggle('hidden')
-
+                    descri.classList.toggle('hidden')
+                    pTag.classList.toggle('hidden')
+                    PTag2.classList.toggle('hidden')
+            
             })
            
 
