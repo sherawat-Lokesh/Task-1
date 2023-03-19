@@ -28,7 +28,7 @@ for(let i=0;i<3;i++){
     sortBtns.appendChild(btns)
 
 }
-nav.appendChild(sorting)
+nav.insertAdjacentElement('afterend',sorting)
 
 
 Array.from(sortBtns.children).forEach(element => {
