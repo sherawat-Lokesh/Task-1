@@ -12,11 +12,18 @@ mainBox.classList.add('main-box')
 containerDiv.appendChild(mainBox)
 
 
-async function loadCards(){
-    const response=await fetch('https://dummyjson.com/products?limit=15');
-    const res= await response.json();
+async function loadCards(data){
 
-    res.products.forEach(element => {
+    const response=await fetch('https://dummyjson.com/products?limit=15');
+    const resp= await response.json();
+    let res=resp.products
+    if(data !==undefined){
+        res=data
+        mainBox.innerHTML=''
+
+    }
+    res.forEach(element => {
+
         console.log(element)
         const box=document.createElement('div');
             box.classList.add('box')
@@ -88,7 +95,7 @@ async function loadCards(){
             descri.classList.add('description')
             descri.classList.add('hidden')
             const descriH3=document.createElement('h3')
-            descriH3.innerText=`${`${element.description}`.substring(0,50)}...`
+            descriH3.innerText=`${element.description}`
             descri.appendChild(descriH3)
             
             //show description section 
@@ -102,9 +109,12 @@ async function loadCards(){
                 pTagI.classList.add('fa-solid')
                 pTagI.classList.add('fa-angle-down')
                 pTag.appendChild(pTagI)
-//creating new i tage for up side arrow adn appending it to new p tage name Ptag2 
+
+
+            //show less Description section    
+            //creating new i tage for up side arrow adn appending it to new p tage name Ptag2 
                 const PTag2=document.createElement('p')
-                PTag2.innerText='Show Less'
+                PTag2.innerText='Less Description'
                 PTag2.classList.add('hidden')
                 const pTagI2=document.createElement('i')
                 pTagI2.classList.add('fa-sharp')
@@ -121,25 +131,10 @@ async function loadCards(){
                     PTag2.classList.toggle('hidden')
             
             })
-           
-
-
-            
             box.appendChild(descri)
-
-
-            
-
-
-
-
             //box variable is the card 
             mainBox.appendChild(box) 
-
-       
-
     });
-
-
 }
 loadCards()
+
