@@ -12,9 +12,6 @@ mainBox.classList.add('main-box')
 containerDiv.appendChild(mainBox)
 
 
-
-
-
 async function loadCards(){
     const response=await fetch('https://dummyjson.com/products?limit=15');
     const res= await response.json();
@@ -25,15 +22,15 @@ async function loadCards(){
             box.classList.add('box')
 
             const mainImg=document.createElement('div')
-            mainImg.classList.add('main-img')
+                mainImg.classList.add('main-img')
             const imgInsideMainImg=document.createElement('img')
-            imgInsideMainImg.setAttribute('src',`${element.thumbnail}`)
-            mainImg.appendChild(imgInsideMainImg)
-            box.appendChild(mainImg)
+                imgInsideMainImg.setAttribute('src',`${element.thumbnail}`)
+                mainImg.appendChild(imgInsideMainImg)
+                box.appendChild(mainImg)
 
             //creating and addding thumbnail img to box
             const thumbnailImg=document.createElement('div')
-            thumbnailImg.classList.add('thumbnail-img')
+                thumbnailImg.classList.add('thumbnail-img')
 
             //This for each getting img array from api and createing thumbnail image by looping over array
             element.images.forEach(source=>{
@@ -42,21 +39,49 @@ async function loadCards(){
 
                 thumbnailImg.insertAdjacentElement('beforeend',imgInsideThumbnailImg)
             })
-            box.appendChild(thumbnailImg)
+                box.appendChild(thumbnailImg)
+
+          
 
             //now creating card TITLE and appending it
             const title = document.createElement('div')
-            title.classList.add('title')
+                title.classList.add('title')
             const titleH1=document.createElement('h1')
-            titleH1.innerText=`${element.title}`
-            const inside=document.createElement('i');
-            inside.classList.add('fa-sharp')
-            inside.classList.add('fa-solid')
-            inside.classList.add('fa-angle-down')
-            titleH1.appendChild(inside)
+                titleH1.innerText=`${element.title}`
+                title.appendChild(titleH1)
+                box.appendChild(title)
 
-            title.appendChild(titleH1)
-            box.appendChild(title)
+              //working on Ratings and appending it
+            const ratings=document.createElement('div')
+                ratings.classList.add('ratings')
+            const label=document.createElement('label')
+                label.setAttribute('for','ratings');
+                label.innerText=`Ratings :`
+                ratings.appendChild(label)
+            const stars=document.createElement('div')
+                stars.classList.add('stars')
+            for(let i=0;i<5;i++){
+                const star=document.createElement('i')
+                star.classList.add('fa-solid')
+                star.classList.add('fa-star')
+                if(Math.round( element.rating)>i){
+                    star.classList.add('active')
+                }
+                stars.appendChild(star)
+            }
+                ratings.appendChild(stars)
+                box.appendChild(ratings)
+
+
+            
+            //now creating price and appending it to box div
+            const price=document.createElement('div')
+                price.classList.add('price')
+            const priceh2=document.createElement('h2')
+                priceh2.innerText=`Discount Price : $${element.price- Math.trunc(element.price/100*element.discountPercentage)}`
+                price.appendChild(priceh2)
+                box.appendChild(price)
+
 
             //creating description and appending it
             const descri=document.createElement('div')
@@ -65,20 +90,33 @@ async function loadCards(){
             const descriH3=document.createElement('h3')
             descriH3.innerText=`${`${element.description}`.substring(0,30)}...`
             descri.appendChild(descriH3)
+            
+            //show description section 
+            const showDesc=document.createElement('div')
+                showDesc.classList.add('show-desc')
+            const pTag=document.createElement('p')
+                pTag.innerHTML='Show Description '
+            const pTagI=document.createElement('i')
+                pTagI.classList.add('fa-sharp')
+                pTagI.classList.add('fa-solid')
+                pTagI.classList.add('fa-angle-down')
+                pTag.appendChild(pTagI)
+                showDesc.appendChild(pTag)
+                box.appendChild(showDesc)
 
-            //now creating price and appending it to box div
-            const price=document.createElement('div')
-            price.classList.add('price')
-            const priceh2=document.createElement('h2')
-            priceh2.innerText=`Price : $${element.price}`
-            price.appendChild(priceh2)
-            box.appendChild(price)
+            showDesc.addEventListener('click',()=>{
+                console.log('hello')
+                descri.classList.toggle('hidden')
+
+            })
+           
+
+
+            
             box.appendChild(descri)
 
 
-            title.addEventListener('click',()=>{
-                descri.classList.toggle('hidden')
-            })
+            
 
 
 
