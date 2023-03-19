@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
 *{
     margin:  0;
     padding: 0;
@@ -16,13 +18,15 @@
     --orange:rgb(255, 85, 28);
     --box-height:27rem;
     --box-width:20rem;
+    --main-font:'Roboto', sans-serif;
 }
 
 body{
     background-color: var(--black);
+    font-family: var();
 }
 .container{
-    height: 100vh;
+    height: 90%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -38,7 +42,7 @@ body{
     width: 330px;
     border-radius: 50%;
     background: linear-gradient(#08ffe6, #fcd200);
-    transform: translate(-490px, -150px);
+    transform: translate(-490px, -700px);
 
 
 }
@@ -50,7 +54,7 @@ body{
     width: 300px;
     border-radius: 50%;
     background: linear-gradient( #fcd200,#fc002e);
-    transform: translate(490px, 150px);
+    transform: translate(490px, -340px);
 }
 .main-box{
     z-index: 10; 
@@ -59,8 +63,8 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    margin-top: 15rem;
+    gap: 1.5rem;
+    margin-top: 5rem;
 
 }
 
@@ -72,11 +76,11 @@ body{
     min-width: var(--box-width);
     max-width: var(--box-width);
     padding: 0,20px;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.589);
     /* background-color: var(--white); */
     border-radius: 20px;
     border: 2px solid rgba(255,255,255,0.7);
-    /* overflow: hidden; */
+    overflow: hidden;
 
 }
 
@@ -85,7 +89,7 @@ body{
 .main-img img{
     /* object-fit: fill; */
     width: 100%;
-    height: 100%;
+    height: 200px;
     border-radius: 20px;
 
 
@@ -97,22 +101,39 @@ body{
     overflow: scroll !important;
     gap: 10px;
     margin-top: 5px;
+    margin-left: 5px;
 
 }
 ::-webkit-scrollbar {
     display: none;
 }
 .thumbnail-img img{
-    width: 20%;
+    /* overflow: scroll !important; */
+    width: 70px;
+    height: 40px;
     border-radius: 5px;
+
 }
 .title{
     margin: 20px 0 20px;
+
 
 }
 .description{
     margin: 20px 0 20px;
 }
+h1{
+    font-size: 25px;
+}
 h2{
     color: var(--orange);
+}
+i{
+    color: rgb(255, 255, 255);
+    width: 10px;
+    display: flex;
+    margin-left: 10px;
+}
+.hidden{
+    display: none;
 }
