@@ -1,0 +1,118 @@
+*{
+    margin:  0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    color: var(--white);
+    list-style: none;
+    text-align: center;
+    
+}
+
+
+:root{
+    --white:white;
+    --black:black;
+    --orange:rgb(255, 85, 28);
+    --box-height:27rem;
+    --box-width:20rem;
+}
+
+body{
+    background-color: var(--black);
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.container::before{
+    content:'';
+    position: absolute;
+    height: 330px;
+    width: 330px;
+    border-radius: 50%;
+    background: linear-gradient(#08ffe6, #fcd200);
+    transform: translate(-490px, -150px);
+
+
+}
+
+.container::after{
+    content:'';
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background: linear-gradient( #fcd200,#fc002e);
+    transform: translate(490px, 150px);
+}
+.main-box{
+    z-index: 10; 
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 15rem;
+
+}
+
+.box{ 
+
+
+    max-height: var(--box-height);
+    min-height: var(--box-height);
+    min-width: var(--box-width);
+    max-width: var(--box-width);
+    padding: 0,20px;
+    background: rgba(0, 0, 0, 0.1);
+    /* background-color: var(--white); */
+    border-radius: 20px;
+    border: 2px solid rgba(255,255,255,0.7);
+    /* overflow: hidden; */
+
+}
+
+/* card inside css start from here */
+
+.main-img img{
+    /* object-fit: fill; */
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+
+
+}
+.thumbnail-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll !important;
+    gap: 10px;
+    margin-top: 5px;
+
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.thumbnail-img img{
+    width: 20%;
+    border-radius: 5px;
+}
+.title{
+    margin: 20px 0 20px;
+
+}
+.description{
+    margin: 20px 0 20px;
+}
+h2{
+    color: var(--orange);
+}
