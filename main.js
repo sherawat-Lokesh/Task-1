@@ -3,6 +3,9 @@ const body=document.querySelector('body');
 const nav=document.createElement('nav')
 body.appendChild(nav)
 
+const mainContainer=document.createElement('div')
+main
+
 const containerDiv= document.createElement('div');
 containerDiv.classList.add('container')
 body.appendChild(containerDiv)
@@ -24,7 +27,7 @@ async function loadCards(data){
     }
     res.forEach(element => {
 
-        console.log(element)
+
         const box=document.createElement('div');
             box.classList.add('box')
 

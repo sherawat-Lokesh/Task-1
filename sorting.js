@@ -1,6 +1,8 @@
-
 const sorting=document.createElement('section')
 sorting.classList.add('sorting')
+const ptag=document.createElement('p')
+ptag.innerText='SORTING BY :'
+sorting.appendChild(ptag);
 const sortBtns=document.createElement('div')
 sortBtns.classList.add('sort-btn')
 sorting.appendChild(sortBtns)
@@ -38,7 +40,6 @@ Array.from(sortBtns.children).forEach(element => {
                     fetch('https://dummyjson.com/products?limit=15').then(res=>res.json()).then(data=>{
                                     let m = data.products.sort((a,b)=>a.price-b.price)
                                         loadCards(m)
-        console.log(e.target.id)
                                         
             })
                     break;
@@ -47,7 +48,6 @@ Array.from(sortBtns.children).forEach(element => {
                     fetch('https://dummyjson.com/products?limit=15').then(res=>res.json()).then(data=>{
                         let m = data.products.sort((a,b)=>b.price-a.price)
                             loadCards(m)
-        console.log(e.target.id)
                             
             })
                     break;
@@ -56,7 +56,7 @@ Array.from(sortBtns.children).forEach(element => {
                 fetch('https://dummyjson.com/products?limit=15').then(res=>res.json()).then(data=>{
                         let m = data.products.sort((a,b)=>a.rating-b.rating)
                             loadCards(m)
-        console.log(e.target.id)
+                            
                             
             })
                     break;
