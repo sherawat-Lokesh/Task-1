@@ -143,7 +143,13 @@ i{
 .hidden{
     display: none;
 }
+.show-desc{
+    cursor: pointer;
 
+}
+.show-desc p{
+    color: blue;
+}
 
 /* /Ratings  */
 
