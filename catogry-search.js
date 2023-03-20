@@ -9,6 +9,8 @@
                     let m=data.products
                     clearMainBox()
                     loadCards(m)
+
+
                 })
             }else if(e.target.value =='Clear All Catogries'){
                     clearMainBox()

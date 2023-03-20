@@ -32,6 +32,7 @@ btn1.addEventListener('click',(e)=>{
         let m= data.products
         clearMainBox()
         loadCards(m)
+
     })
 
 })
@@ -41,6 +42,8 @@ btn2.addEventListener('click',(e)=>{
         let m=data.products
         clearMainBox()
         loadCards(m)
+
+
     })
     input.value=''
 

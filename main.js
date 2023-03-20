@@ -1,4 +1,6 @@
 'use strict'
+
+let global =[]
 const body=document.querySelector('body');
 //creating a navbar section for search functionality
 const nav=document.createElement('nav')
@@ -15,10 +17,9 @@ catogryDiv.classList.add('catogries')
 
 
 // here is the function for creating radio button catogries 
-// 1. creating a div 
+// 1. creating a div
 // 2. creating input radio button and setting its attributes and appeding it to div
 // 3. creating a label to show text of radio buttons and also appending it to div
-
 function loadRadioInput(data){
     const catogriesP=document.createElement('div')
     const clearCatogries=document.createElement('input')
@@ -50,13 +51,6 @@ mainContainer.insertAdjacentElement('afterbegin',catogryDiv)
 
 
 
-
-
-
-
-
-
-
 const containerDiv= document.createElement('div');
 containerDiv.classList.add('container')
 mainContainer.appendChild(containerDiv)
@@ -74,8 +68,10 @@ async function loadCards(data){
     const response=await fetch('https://dummyjson.com/products?limit=15');
     const resp= await response.json();
     let res=resp.products
+    global=res
     if(data !==undefined){
         res=data
+        global=data
         // mainBox.innerHTML=''
 
     }
@@ -149,11 +145,11 @@ async function loadCards(data){
 
             //creating description and appending it
             const descri=document.createElement('div')
-            descri.classList.add('description')
-            descri.classList.add('hidden')
+                descri.classList.add('description')
+                descri.classList.add('hidden')
             const descriH3=document.createElement('h3')
-            descriH3.innerText=`${element.description}`
-            descri.appendChild(descriH3)
+                descriH3.innerText=`${element.description}`
+                descri.appendChild(descriH3)
             
             //show description section 
             const showDesc=document.createElement('div')
@@ -170,10 +166,10 @@ async function loadCards(data){
 
             //show less Description section    
             //creating new i tage for up side arrow adn appending it to new p tage name Ptag2 
-                const PTag2=document.createElement('p')
+            const PTag2=document.createElement('p')
                 PTag2.innerText='Less Description'
                 PTag2.classList.add('hidden')
-                const pTagI2=document.createElement('i')
+            const pTagI2=document.createElement('i')
                 pTagI2.classList.add('fa-sharp')
                 pTagI2.classList.add('fa-solid')
                 pTagI2.classList.add('fa-angle-up')
@@ -186,7 +182,6 @@ async function loadCards(data){
                     descri.classList.toggle('hidden')
                     pTag.classList.toggle('hidden')
                     PTag2.classList.toggle('hidden')
-            
             })
             box.appendChild(descri)
             //box variable is the card 

@@ -37,31 +37,24 @@ Array.from(sortBtns.children).forEach(element => {
     element.addEventListener('click',(e)=>{
         switch (e.target.id){
             case '0':{
-                    fetch('https://dummyjson.com/products?limit=15').then(res=>res.json()).then(data=>{
-                        let m = data.products.sort((a,b)=>a.price-b.price)
+                        let m = global.sort((a,b)=>a.price-b.price)
                         clearMainBox()
                         loadCards(m)
-                                        
-            })
-                    break;
+                        break;
             }
             case '1':{
-                    fetch('https://dummyjson.com/products?limit=15').then(res=>res.json()).then(data=>{
-                        let m = data.products.sort((a,b)=>b.price-a.price)
+                        let m = global.sort((a,b)=>b.price-a.price)
                         clearMainBox()
                         loadCards(m)
-                            
-            })
-                    break;
+                        break;
+
             }
             case '2':{
-                fetch('https://dummyjson.com/products?limit=15').then(res=>res.json()).then(data=>{
-                        let m = data.products.sort((a,b)=>a.rating-b.rating)
+
+                        let m = global.sort((a,b)=>a.rating-b.rating)
                         clearMainBox()
                         loadCards(m)
                             
-                            
-            })
                     break;
             }
         }
