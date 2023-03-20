@@ -18,17 +18,17 @@ for(let i=0;i<3;i++){
     btns.classList.add('sort-1')
     switch(i){
         case 0:{
-            btns.innerHTML='Low to High'
+            btns.innerHTML='Price : Low to High'
             btns.id=i
             break;
         }
         case 1:{
-            btns.innerHTML='High to Low'
+            btns.innerHTML='Price : High to Low'
             btns.id=i
             break;
         }
         case 2:{
-            btns.innerHTML='&nbsp;&nbsp;By Rating&nbsp;&nbsp;'
+            btns.innerHTML='Rating : &nbsp;&nbsp;High to Low&nbsp;&nbsp;'
             btns.id=i
             break;
         }
