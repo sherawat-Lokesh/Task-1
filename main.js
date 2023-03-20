@@ -1,7 +1,8 @@
 'use strict'
-
-let global =[]
 const body=document.querySelector('body');
+//its a variable for sorting all the fetched data will be stored in this array and when sorting button clicked then they
+// sort data based on this global variable
+let global =[]
 //creating a navbar section for search functionality
 const nav=document.createElement('nav')
 body.appendChild(nav)

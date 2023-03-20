@@ -51,7 +51,7 @@ Array.from(sortBtns.children).forEach(element => {
             }
             case '2':{
 
-                        let m = global.sort((a,b)=>a.rating-b.rating)
+                        let m = global.sort((a,b)=>b.rating-a.rating)
                         clearMainBox()
                         loadCards(m)
                             
