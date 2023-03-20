@@ -1,7 +1,7 @@
 const sorting=document.createElement('section')
 sorting.classList.add('sorting')
 const ptag=document.createElement('p')
-ptag.innerText='SORTING BY :'
+ptag.innerText='SORTING BY PRICE :'
 sorting.appendChild(ptag);
 const sortBtns=document.createElement('div')
 sortBtns.classList.add('sort-btn')
