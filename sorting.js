@@ -28,7 +28,7 @@ for(let i=0;i<3;i++){
             break;
         }
         case 2:{
-            btns.innerHTML='Rating : &nbsp;&nbsp;High to Low&nbsp;&nbsp;'
+            btns.innerHTML='Rating : High to Low&nbsp;'
             btns.id=i
             break;
         }
