@@ -135,7 +135,10 @@ h3{
     font-size: 15px;
 }
 i{
-    color: rgb(255, 255, 255);
+    /* color: rgb(255, 255, 255);
+     */
+    color: skyblue;
+
     width: 10px;
     display: flex;
     margin-left: 10px;
@@ -148,7 +151,7 @@ i{
 
 }
 .show-desc p{
-    color: lightblue;
+    color: skyblue;
 }
 
 /* /Ratings  */
