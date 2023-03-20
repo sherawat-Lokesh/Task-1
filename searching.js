@@ -33,7 +33,6 @@ btn1.addEventListener('click',(e)=>{
         clearMainBox()
         loadCards(m)
     })
-    input.value=''
 
 })
 
@@ -43,4 +42,6 @@ btn2.addEventListener('click',(e)=>{
         clearMainBox()
         loadCards(m)
     })
+    input.value=''
+
 })

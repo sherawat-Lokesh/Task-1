@@ -1,17 +1,23 @@
 'use strict'
 const body=document.querySelector('body');
+//creating a navbar section for search functionality
 const nav=document.createElement('nav')
 body.appendChild(nav)
 
+//creating mainContainer div for catogries and cards  loading
 const mainContainer=document.createElement('div')
 mainContainer.classList.add('main-container')
 body.appendChild(mainContainer)
 
-
+//creating catogery div  and appending it to mainContainer (inside this dive all catogries will be appended)
 const catogryDiv=document.createElement('div')
 catogryDiv.classList.add('catogries')
 
 
+// here is the function for creating radio button catogries 
+// 1. creating a div 
+// 2. creating input radio button and setting its attributes and appeding it to div
+// 3. creating a label to show text of radio buttons and also appending it to div
 
 function loadRadioInput(data){
     const catogriesP=document.createElement('div')
