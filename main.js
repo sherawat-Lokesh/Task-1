@@ -4,15 +4,61 @@ const nav=document.createElement('nav')
 body.appendChild(nav)
 
 const mainContainer=document.createElement('div')
-main
+mainContainer.classList.add('main-container')
+body.appendChild(mainContainer)
+
+
+const catogryDiv=document.createElement('div')
+catogryDiv.classList.add('catogries')
+
+
+
+function loadRadioInput(data){
+    const catogriesP=document.createElement('div')
+    const clearCatogries=document.createElement('input')
+            clearCatogries.setAttribute('type','radio')
+            clearCatogries.setAttribute('name',`catogery`)
+            clearCatogries.setAttribute('value',`${data}`)
+            clearCatogries.classList.add('catg')
+            catogriesP.insertAdjacentElement('beforeend',clearCatogries)
+    const catogriesPLable=document.createElement('label')
+            catogriesPLable.innerHTML=`${data}`
+            catogriesP.appendChild(catogriesPLable)
+            catogryDiv.appendChild(catogriesP)
+
+    }loadRadioInput('Clear All Catogries')
+
+
+async function loadCatogries(){
+    const response= await fetch(`https://dummyjson.com/products/categories`)
+    const resp= await response.json()
+    resp.forEach(val=>{
+        loadRadioInput(val)
+    })
+    getCatogeries()
+}loadCatogries()
+
+mainContainer.insertAdjacentElement('afterbegin',catogryDiv)
+
+
+
+
+
+
+
+
+
+
+
 
 const containerDiv= document.createElement('div');
 containerDiv.classList.add('container')
-body.appendChild(containerDiv)
+mainContainer.appendChild(containerDiv)
 
 const mainBox= document.createElement('div')
 mainBox.classList.add('main-box')
 containerDiv.appendChild(mainBox)
+
 
 
 async function loadCards(data){
