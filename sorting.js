@@ -38,8 +38,9 @@ Array.from(sortBtns.children).forEach(element => {
         switch (e.target.id){
             case '0':{
                     fetch('https://dummyjson.com/products?limit=15').then(res=>res.json()).then(data=>{
-                                    let m = data.products.sort((a,b)=>a.price-b.price)
-                                        loadCards(m)
+                        let m = data.products.sort((a,b)=>a.price-b.price)
+                        clearMainBox()
+                        loadCards(m)
                                         
             })
                     break;
@@ -47,7 +48,8 @@ Array.from(sortBtns.children).forEach(element => {
             case '1':{
                     fetch('https://dummyjson.com/products?limit=15').then(res=>res.json()).then(data=>{
                         let m = data.products.sort((a,b)=>b.price-a.price)
-                            loadCards(m)
+                        clearMainBox()
+                        loadCards(m)
                             
             })
                     break;
@@ -55,7 +57,8 @@ Array.from(sortBtns.children).forEach(element => {
             case '2':{
                 fetch('https://dummyjson.com/products?limit=15').then(res=>res.json()).then(data=>{
                         let m = data.products.sort((a,b)=>a.rating-b.rating)
-                            loadCards(m)
+                        clearMainBox()
+                        loadCards(m)
                             
                             
             })

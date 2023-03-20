@@ -29,8 +29,8 @@ btn1.addEventListener('click',(e)=>{
 
     
     fetch(`https://dummyjson.com/products/search?q=${input.value}`).then(res=>res.json()).then(data=>{
-
         let m= data.products
+        clearMainBox()
         loadCards(m)
     })
     input.value=''
@@ -40,7 +40,7 @@ btn1.addEventListener('click',(e)=>{
 btn2.addEventListener('click',(e)=>{
     fetch('https://dummyjson.com/products?limit=15').then(res=>res.json()).then(data=>{
         let m=data.products
-        loadCards(m
-            )
+        clearMainBox()
+        loadCards(m)
     })
 })

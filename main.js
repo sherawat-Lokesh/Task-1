@@ -60,7 +60,9 @@ mainBox.classList.add('main-box')
 containerDiv.appendChild(mainBox)
 
 
-
+function clearMainBox(){
+    mainBox.innerHTML=''
+}
 async function loadCards(data){
 
     const response=await fetch('https://dummyjson.com/products?limit=15');
@@ -68,7 +70,7 @@ async function loadCards(data){
     let res=resp.products
     if(data !==undefined){
         res=data
-        mainBox.innerHTML=''
+        // mainBox.innerHTML=''
 
     }
     res.forEach(element => {
